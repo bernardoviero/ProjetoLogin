@@ -18,7 +18,7 @@ function sendMail($dados){
         $mail->SMTPSecure = 'tls';
         $mail->SMTPAuth = true;
         $mail->Username = 'sistema.loginprojeto@gmail.com';
-        $mail->Password = 'aprffjaikyyaaauh';
+        $mail->Password = 'teste';
         $mail->Port = 587;
     
         $mail->setFrom('sistema.loginprojeto@gmail.com');

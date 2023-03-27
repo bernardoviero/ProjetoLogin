@@ -42,8 +42,8 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `email`) VALUES
-(1, 'Nome teste', 'usuario', '1f29244727931d79deeb9516367e7688', 'mauriciobraga100@gmail.com'),
-(3, NULL, 'usuario2', '0aee913e006edcea8462645d93174cbc', 'bernardodesouviero@gmail.com');
+(1, 'Nome teste', 'usuario', '1f29244727931d79deeb9516367e7688', 'teste@gmail.com'),
+(3, NULL, 'usuario2', '0aee913e006edcea8462645d93174cbc', 'teste2@gmail.com');
 
 --
 ALTER TABLE `user`
@@ -66,4 +66,4 @@ O desenvolvimento desse sistema é apenas para aplicações acadêmicas, não se
 
 ## Autores
 
-- [@mauricioprb](https://www.github.com/bernardoviero)
+- [@bernardoviero](https://www.github.com/bernardoviero)
