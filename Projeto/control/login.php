@@ -12,7 +12,6 @@
         verificaLogin();
     }
     
-    // Função para verificar login e realizar a autenticação
     function verificaLogin(){
         global $mysqli;
 
@@ -21,18 +20,15 @@
                 
         $user = new User($username, $password);
     
-        // cria a query SQL
         $sql = "SELECT * FROM user WHERE username = '" . $user->getUsername() . "' AND password = '" .md5($user->getPassword()) . "'";
         
         // testa a query e verifica se há erros
         $res = $mysqli->query($sql) or die('Falha na Execução do código.' . $mysqli->error);
     
-        // transforma o retorno da query em objetos
         $row = $res->fetch_object();
     
         $qtd = $res->num_rows;
     
-        // se retornou algo está correto, se não credencias erradas. E começa a tratar as tentativas de login
         if($qtd > 0){
             $_SESSION['id'] = $row->id;
             $_SESSION['name'] = $row->name;
@@ -70,10 +66,8 @@
 
         $user = new User($username);
 
-        // cria a query SQL
         $sql = "SELECT * FROM user WHERE username = '" . $user->getUsername() . "' ";
         
-        // testa a query e verifica se há erros
         $res = $mysqli->query($sql) or die('Falha na Execução do código.' . $mysqli->error);
     
         // transforma o retorno da query em objetos
@@ -81,7 +75,6 @@
     
         $qtd = $res->num_rows;
     
-        // se retornou algo está correto, se não credencias erradas. E começa a tratar as tentativas de login
         if($qtd > 0){
             sendMail($row);
         }else{
