@@ -3,6 +3,20 @@
 
 # ProjetoLogin: Tela de Login funcional.
 
+## Utilização
+Usuário já cadastrados, devem poder se autenticar e realizar login no sistema.
+
+### Resetar Senha
+Caso os usuários queiram resetar sua senhas, basta saber seu "username" e criar em "Recuperar Senha".
+Com isso será enviado um e-mail com a nova senha, para o e-mail cadastrado no Banco.
+
+### Bloqueio de Usuários
+Caso o usuário tente acessar o sistema e erre sua senha mais do que 5 vezes, o sistema bloqueará o usuário por 2 minutos.
+
+### Acesso ao Sistema
+Se suas informações de login forem autenticadas você será direcionado a dashboard do sistema.
+
+
 ## Objetivos Gerais:
 Realizar o Login em um sistema simples.
 
