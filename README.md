@@ -7,7 +7,7 @@
 Usuário já cadastrados, devem poder se autenticar e realizar login no sistema.
 
 ### Resetar Senha
-Caso os usuários queiram resetar sua senhas, basta saber seu "username" e criar em "Recuperar Senha".
+Caso os usuários queiram resetar sua senhas, basta saber seu "username" e clicar em "Recuperar Senha".
 Com isso será enviado um e-mail com a nova senha, para o e-mail cadastrado no Banco.
 
 ### Bloqueio de Usuários
