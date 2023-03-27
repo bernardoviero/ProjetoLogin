@@ -1,9 +1,12 @@
 <?php
     session_start();
+    include('sendMail.php');
     include('../model/User.php');
     include('../dao/Connection.php');
-
-    if(empty($_POST) or empty($_POST['username']) or empty($_POST['password'])){
+    
+    if(isset($_POST['username']) && empty($_POST['password'])){
+        recuperarSenha();
+    }elseif(empty($_POST) or empty($_POST['username']) or empty($_POST['password'])){
         print "<script> location.href='../view/index.php'; </script>";
     }else{
         verificaLogin();
@@ -12,7 +15,7 @@
     // Função para verificar login e realizar a autenticação
     function verificaLogin(){
         global $mysqli;
-    
+
         $username = $mysqli->real_escape_string($_POST['username']);
         $password = $mysqli->real_escape_string($_POST['password']);
                 
@@ -57,6 +60,33 @@
             $_SESSION['login_attempts_time'] = time(); // armazena a data e hora em que o usuário excedeu o número máximo de tentativas de login
             echo "<script>location.href='../view/index.php';</script>";
             exit;
+        }
+    }
+
+    function recuperarSenha(){
+        global $mysqli;
+
+        $username = $mysqli->real_escape_string($_POST['username']);
+
+        $user = new User($username);
+
+        // cria a query SQL
+        $sql = "SELECT * FROM user WHERE username = '" . $user->getUsername() . "' ";
+        
+        // testa a query e verifica se há erros
+        $res = $mysqli->query($sql) or die('Falha na Execução do código.' . $mysqli->error);
+    
+        // transforma o retorno da query em objetos
+        $row = $res->fetch_object();
+    
+        $qtd = $res->num_rows;
+    
+        // se retornou algo está correto, se não credencias erradas. E começa a tratar as tentativas de login
+        if($qtd > 0){
+            sendMail($row);
+        }else{
+            print "<script> alert('Usuário inexistente!'); </script>";
+            echo "<script>location.href='../view/index.php';</script>";
         }
     }
 ?>

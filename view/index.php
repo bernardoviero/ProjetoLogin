@@ -21,6 +21,9 @@
             <input type="password" name="password" placeholder="Digite sua password">
         </p>
         <p>
+            <input type="submit" value="Recuperar Senha">
+        </p>
+        <p>
             <input type="submit" value="Logar">
         </p>
     </form>
