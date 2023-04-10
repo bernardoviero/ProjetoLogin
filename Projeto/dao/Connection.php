@@ -1,14 +1,14 @@
 <?php
 
-    $usuario = 'root';
-    $senha = '';
-    $database = 'login';
-    $host = 'localhost';
+$usuario = 'root';
+$senha = '';
+$database = 'login';
+$host = 'localhost';
+$port = "3306";
 
-    $mysqli = new mysqli($host,$usuario,$senha,$database);
+echo $senha;
+$mysqli = new mysqli($host, $usuario, $senha, $database, $port);
 
-    if($mysqli->error){
-        die('Falha ao conectar-se ao banco de dados.'.$mysqli->error);
-    }
-
-?>
+if ($mysqli->error) {
+    die('Falha ao conectar-se ao banco de dados.' . $mysqli->error);
+}

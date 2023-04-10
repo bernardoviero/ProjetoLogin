@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if(empty($_SESSION)){
-        print "<script>alert('Usuário não logado!')</script>";
-        print "<script> location.href='index.php'; </script>";
-    }
+session_start();
+if (empty($_SESSION)) {
+    print "<script>alert('Usuário não logado!')</script>";
+    print "<script> location.href='index.php'; </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -53,12 +53,8 @@
         <br>
         <br>
 
-        <button
-            style="background: red; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">
-            <?php
-                print "<a href='../control/logout.php' style='background: red; color: #fff'>Logout</a>";
-            ?>
-        </button>
+        <a href="../control/logout.php" style="background: red; color: #fff; text-decoration: none;"><button
+                style="background: red; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Logout</button></a>
     </div>
 </body>
 
